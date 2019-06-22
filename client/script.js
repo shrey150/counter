@@ -6,6 +6,10 @@ socket.on("update", data => {
     document.querySelector("#count").innerHTML = data;
 });
 
+socket.on("updateTotalUsers", n => {
+    document.querySelector("#totalUsers").innerHTML = `Total players: ${n}`;
+});
+
 function count(mode) { socket.emit("count", mode) }
 
 window.addEventListener("keydown", e => {
